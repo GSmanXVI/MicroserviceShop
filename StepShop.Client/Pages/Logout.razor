@@ -1,0 +1,17 @@
+﻿@page "/logout"
+
+@inject NavigationManager NavigationManager
+@inject AccountService AccountService
+
+<h1>Logout</h1>
+<p>You will be redirected to the main page...</p>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await AccountService.Logout();
+        NavigationManager.NavigateTo("");
+    }
+
+}
